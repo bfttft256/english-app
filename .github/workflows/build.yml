@@ -29,3 +29,6 @@ jobs:
         with:
           name: package
           path: bin/*.apk
+        with:
+          name: package
+          path: bin/*.apk
