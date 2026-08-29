@@ -12,9 +12,11 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential git ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixin-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev openjdk-17-jdk unzip zip ccache autoconf libtool pkg-config lld cmake libffi-dev libssl-dev
+          sudo apt-get update -y || true
+          sudo apt-get install -y --no-install-recommends build-essential git ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixin-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev openjdk-17-jdk unzip zip ccache autoconf libtool pkg-config lld cmake libffi-dev libssl-dev || true
           pip install --upgrade "cython<3.0.0" buildozer
 
       - name: Build with Buildozer
