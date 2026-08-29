@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt-get update -y || true
           sudo apt-get install -y --no-install-recommends build-essential git ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixin-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev openjdk-17-jdk unzip zip ccache autoconf libtool pkg-config lld cmake libffi-dev libssl-dev || true
-          pip install --upgrade "cython<3.0.0" buildozer
+          pip install --upgrade pip setuptools wheel "cython<3.0.0" buildozer
 
       - name: Build with Buildozer
         run: |
