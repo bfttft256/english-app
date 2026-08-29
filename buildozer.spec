@@ -9,3 +9,4 @@ requirements = python3,kivy,pyjnius
 orientation = portrait
 android.archs = arm64-v8a
 android.accept_sdk_license = True
+p4a.branch = master
